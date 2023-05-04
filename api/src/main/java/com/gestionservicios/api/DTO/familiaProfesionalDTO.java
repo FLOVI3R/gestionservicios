@@ -1,35 +1,23 @@
-package com.gestionservicios.api.models;
+package com.gestionservicios.api.DTO;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+public class familiaProfesionalDTO {
 
-@Entity
-@Table(name = "familiaprofesional")
-public class familiaProfesional {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idfamiliaprofesional;
 	
-	@Column(name = "nombre")
 	private String nombre;
 
-	public familiaProfesional() {
+	public familiaProfesionalDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public familiaProfesional(Integer idfamiliaprofesional, String nombre) {
+	public familiaProfesionalDTO(Integer idfamiliaprofesional, String nombre) {
 		super();
 		this.idfamiliaprofesional = idfamiliaprofesional;
 		this.nombre = nombre;
 	}
 
-	public familiaProfesional(String nombre) {
+	public familiaProfesionalDTO(String nombre) {
 		super();
 		this.nombre = nombre;
 	}

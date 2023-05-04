@@ -44,4 +44,9 @@ public class alumnoServiceImpl implements alumnoServiceInterface {
 	public List<alumno> alumnosList() {
 		return alumnoRepo.findAll();
 	}
+
+	@Override
+	public void deleteAlumnoById(Integer id) {
+		alumnoRepo.deleteById(id);
+	}
 }

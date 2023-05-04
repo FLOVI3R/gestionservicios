@@ -11,4 +11,6 @@ public interface alumnoServiceInterface extends UserDetailsService {
 	public alumno save(alumnoDTO alumnoDto);
 
 	List<alumno> alumnosList();
+	
+	public void deleteAlumnoById(Integer id);
 }

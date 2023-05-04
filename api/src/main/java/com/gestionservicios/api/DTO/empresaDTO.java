@@ -1,49 +1,25 @@
-package com.gestionservicios.api.models;
+package com.gestionservicios.api.DTO;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name="empresas")
-public class empresa {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class empresaDTO {
+	
 	private Integer idEmpresa;
 	
-	@Column(name = "nombre")
 	private String nombre;
 	
-	@Column(name = "direccion")
 	private String direccion;
 	
-	@Column(name = "tfno")
 	private String tfno;
 	
-	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "logo")
 	private String logo;
 
-	public empresa() {
+	public empresaDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public empresa(Integer idEmpresa, String nombre, String direccion, String tfno, String email, String logo) {
+	public empresaDTO(Integer idEmpresa, String nombre, String direccion, String tfno, String email, String logo) {
 		super();
 		this.idEmpresa = idEmpresa;
 		this.nombre = nombre;
@@ -53,7 +29,7 @@ public class empresa {
 		this.logo = logo;
 	}
 
-	public empresa(String nombre, String direccion, String tfno, String email, String logo) {
+	public empresaDTO(String nombre, String direccion, String tfno, String email, String logo) {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
@@ -110,4 +86,3 @@ public class empresa {
 		this.logo = logo;
 	}
 }
-
