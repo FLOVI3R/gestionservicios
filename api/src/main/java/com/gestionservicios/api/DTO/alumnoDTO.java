@@ -1,5 +1,9 @@
 package com.gestionservicios.api.DTO;
 
+import java.util.Set;
+
+import com.gestionservicios.api.models.role;
+
 public class alumnoDTO {
 
 	private Integer idAlumnos;
@@ -12,14 +16,30 @@ public class alumnoDTO {
 
 	private String password;
 	
-	private String role;
+	private Set<role> role;
+	
+	private Integer idfamilia;
 
 	public alumnoDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public alumnoDTO(Integer idAlumnos, String nombre, String apellidos, String email, String password, String role) {
+	public alumnoDTO(String nombre, String apellidos, String email, String password,
+			Set<com.gestionservicios.api.models.role> role, Integer idfamilia) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.idfamilia = idfamilia;
+	}
+
+
+
+	public alumnoDTO(Integer idAlumnos, String nombre, String apellidos, String email, String password,
+			Set<com.gestionservicios.api.models.role> role, Integer idfamilia) {
 		super();
 		this.idAlumnos = idAlumnos;
 		this.nombre = nombre;
@@ -27,16 +47,10 @@ public class alumnoDTO {
 		this.email = email;
 		this.password = password;
 		this.role = role;
+		this.idfamilia = idfamilia;
 	}
 
-	public alumnoDTO(String nombre, String apellidos, String email, String password, String role) {
-		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.email = email;
-		this.password = password;
-		this.role = role;
-	}
+
 
 	public alumnoDTO(String email) {
 		super();
@@ -83,11 +97,19 @@ public class alumnoDTO {
 		this.password = password;
 	}
 
-	public String getRole() {
+	public Set<role> getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(Set<role> role) {
 		this.role = role;
+	}
+
+	public int getIdfamilia() {
+		return idfamilia;
+	}
+
+	public void setIdfamilia(Integer idfamilia) {
+		this.idfamilia = idfamilia;
 	}
 }

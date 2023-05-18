@@ -1,10 +1,15 @@
 package com.gestionservicios.api.models;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,15 +32,25 @@ public class alumno {
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "role")
-	private String role;
-
-	public alumno() {
+	@Column(name="role")
+    private Set<role> role;
+	
+	@Column(name="idfamilia")
+	private Integer idfamilia;
+	
+	public alumno(String nombre, String apellidos, String email, String password,
+			Set<com.gestionservicios.api.models.role> role, Integer idfamilia) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.idfamilia = idfamilia;
 	}
 
-	public alumno(Integer idAlumnos, String nombre, String apellidos, String email, String password, String role) {
+	public alumno(Integer idAlumnos, String nombre, String apellidos, String email, String password,
+			Set<com.gestionservicios.api.models.role> role, Integer idfamilia) {
 		super();
 		this.idAlumnos = idAlumnos;
 		this.nombre = nombre;
@@ -43,17 +58,14 @@ public class alumno {
 		this.email = email;
 		this.password = password;
 		this.role = role;
+		this.idfamilia = idfamilia;
 	}
 
-	public alumno(String nombre, String apellidos, String email, String password, String role) {
+	public alumno() {
 		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.email = email;
-		this.password = password;
-		this.role = role;
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Integer getIdAlumnos() {
 		return idAlumnos;
 	}
@@ -94,11 +106,19 @@ public class alumno {
 		this.password = password;
 	}
 
-	public String getRole() {
+	public Set<role> getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(Set<role> role) {
 		this.role = role;
+	}
+
+	public int getIdfamilia() {
+		return idfamilia;
+	}
+
+	public void setIdfamilia(Integer idfamilia) {
+		this.idfamilia = idfamilia;
 	}
 }

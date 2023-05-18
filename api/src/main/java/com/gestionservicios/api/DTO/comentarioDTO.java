@@ -1,35 +1,21 @@
-package com.gestionservicios.api.models;
+package com.gestionservicios.api.DTO;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+public class comentarioDTO {
 
-@Entity
-@Table(name = "comentarios")
-public class comentario {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idcomentarios;
 	
-	@Column(name = "idAlumno")
 	private Integer idAlumno;
 	
-	@Column(name = "idServicio")
 	private Integer idServicio;
 	
-	@Column(name = "comentario")
 	private String comentario;
 
-	public comentario() {
+	public comentarioDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public comentario(Integer idcomentarios, int idAlumno, int idServicio, String comentario) {
+	public comentarioDTO(Integer idcomentarios, Integer idAlumno, Integer idServicio, String comentario) {
 		super();
 		this.idcomentarios = idcomentarios;
 		this.idAlumno = idAlumno;
@@ -37,7 +23,7 @@ public class comentario {
 		this.comentario = comentario;
 	}
 
-	public comentario(Integer idAlumno, Integer idServicio, String comentario) {
+	public comentarioDTO(Integer idAlumno, Integer idServicio, String comentario) {
 		super();
 		this.idAlumno = idAlumno;
 		this.idServicio = idServicio;
@@ -52,7 +38,7 @@ public class comentario {
 		this.idcomentarios = idcomentarios;
 	}
 
-	public int getIdAlumno() {
+	public Integer getIdAlumno() {
 		return idAlumno;
 	}
 
@@ -60,7 +46,7 @@ public class comentario {
 		this.idAlumno = idAlumno;
 	}
 
-	public int getIdServicio() {
+	public Integer getIdServicio() {
 		return idServicio;
 	}
 

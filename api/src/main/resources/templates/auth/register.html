@@ -19,7 +19,7 @@
 				</div>
 			</div>
 				<h2>REGISTRO DE ALUMNO</h2>
-				<form th:action="@{/api/auth/registerAccount}" method="post" th:object="${alumno}">
+				<form th:action="@{/api/registerAccount}" method="post" th:object="${alumno}">
 					<div class="form-group">
 						<label class="control-label" for="nombre">NOMBRE: </label>
 						<input id="nombre" class="form-control" th:field="*{nombre}" required autofocus="autofocus">

@@ -1,16 +1,16 @@
 package com.gestionservicios.api.service;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.gestionservicios.api.DTO.empresaDTO;
 import com.gestionservicios.api.models.empresa;
-import com.gestionservicios.api.models.familiaProfesional;
 import com.gestionservicios.api.repository.empresaRepositoryInterface;
 
 @Service
 public class empresaServiceImpl implements empresaServiceInterface{
 
+	@Autowired
 	private empresaRepositoryInterface empresaRepo;
 	
 	public empresaServiceImpl(empresaRepositoryInterface empresaRepo) {

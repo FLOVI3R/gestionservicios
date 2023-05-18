@@ -1,72 +1,45 @@
-package com.gestionservicios.api.models;
+package com.gestionservicios.api.DTO;
 
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+public class servicioDTO {
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name="servicios")
-public class servicio {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idservicios;
+private Integer idservicios;
 	
-	@Column(name = "titulo")
 	private String titulo;
 	
-	@Column(name = "descripcion")
 	private String descripcion;
 	
-	@Column(name = "fechaAlta")
 	private Date fechaAlta;
-	
-	@Column(name = "fechaRealizacion")
+
 	private Date fechaRealizacion;
-	
-	@Column(name = "valoracion")
+
 	private Integer valoracion;
 	
-	@Column(name="idAlumno")
 	private Integer idAlumno;
 	
-	@Column(name="idEmpresa")
 	private Integer idEmpresa;
 	
-	@Column(name="idFamilia")
 	private Integer idFamilia;
 
-	public servicio() {
+	public servicioDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public servicio(String titulo, String descripcion, Date fechaAlta, Date fechaRealizacion, Integer valoracion, Integer idAlumno, Integer idEmpresa, Integer idFamilia) {
+
+	public servicioDTO(String titulo, String descripcion, Date fechaAlta, Date fechaRealizacion, Integer valoracion, Integer idAlumno, Integer idEmpresa, Integer idFamilia) {
 		super();
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fechaAlta = fechaAlta;
 		this.fechaRealizacion = fechaRealizacion;
 		this.valoracion = valoracion;
-		this.idAlumno = idFamilia;
+		this.idAlumno = idAlumno;
 		this.idEmpresa = idEmpresa;
 		this.idFamilia = idFamilia;
 	}
 
-	public servicio(Integer idservicios, String titulo, String descripcion, Date fechaAlta, Date fechaRealizacion, Integer valoracion, Integer idAlumno, Integer idEmpresa, Integer idFamilia) {
+	public servicioDTO(Integer idservicios, String titulo, String descripcion, Date fechaAlta, Date fechaRealizacion, Integer valoracion, Integer idAlumno, Integer idEmpresa, Integer idFamilia) {
 		super();
 		this.idservicios = idservicios;
 		this.titulo = titulo;
@@ -74,7 +47,7 @@ public class servicio {
 		this.fechaAlta = fechaAlta;
 		this.fechaRealizacion = fechaRealizacion;
 		this.valoracion = valoracion;
-		this.idAlumno = idFamilia;
+		this.idAlumno = idAlumno;
 		this.idEmpresa = idEmpresa;
 		this.idFamilia = idFamilia;
 	}
@@ -151,4 +124,3 @@ public class servicio {
 		this.idFamilia = idFamilia;
 	}
 }
-
